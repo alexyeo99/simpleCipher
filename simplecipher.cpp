@@ -28,17 +28,7 @@ void generateSquare(); */
 //commented. lets see if its required.
 
 /*
-----------------------------------------------------------
 VIGENERE CIPHER DECODER FUNCTION
-----------------------------------------------------------
-A code-optimized function to decode vigenere ciphers.
-Version: 1.0
-Comments:
- >For code optimization:
-	- Removed the two foreach loops
-	- There was a pattern that was utilized that only uses one line
-	  of the vigenere square. Additionally, intead of two foreach loops,
-	  it just refers to the index of the charachter code.
 */
 string vigenere::decode(string userInput, string rawUserKey) {
 	//see if square was not initialized. this will not work if it isn't.
@@ -114,15 +104,8 @@ string vigenere::decode(string userInput, string rawUserKey) {
 
 
 /*
-----------------------------------------------------------
 VIGENERE SQUARE GENERATOR FUNCTION
-----------------------------------------------------------
-A function to generate the vigenere square that the program utilizes
-WARNING: The function must be run first before encoding/decoding functions are run.
-Version: 1.0
-Comments:
->Additional warnings:
-- [!]No feedback if successful or not. It has never failed before tough.
+A function to generate the vigenere square that the program utilizes. Automatically executes when a vigenere decoder object is created.
 */
 void vigenere::generateSquare() {
 	int w = 0;
@@ -149,15 +132,7 @@ void vigenere::generateSquare() {
 
 
 /*
-----------------------------------------------------------
 VIGENERE CIPHER ENCODER FUNCTION
-----------------------------------------------------------
-A code-optimized function to encode vigenere ciphers.
-Version: 1.1
-Comments:
->For code optimization:
-- Removed the two foreach loops
-- There was a pattern that utilized indexes of the charachter codes. This was used here.
 */
 string vigenere::encode(string userInput, string rawUserKey){
 	string output = "";
@@ -228,11 +203,7 @@ string vigenere::encode(string userInput, string rawUserKey){
 
 
 /*
-----------------------------------------------------------
 CAESAR CIPHER ENCODER/DECODER FUNCTION
-----------------------------------------------------------
-A code-optimized function to encode/decode caesar ciphers.
-Version: 1.0
 Comments:
 >A positive shift indicates shifting letters forward.
 >A negative shift means x letters backward.
@@ -290,13 +261,7 @@ string caesar(string userInput, int userShift) {
 
 
 /*
-----------------------------------------------------------
 ATBASH CIPHER ENCODER/DECODER FUNCTION
-----------------------------------------------------------
-A code-optimized function to encode/decode caesar ciphers.
-Version: 1.0
-Comments:
->Just pass the data and it will do it
 */
 string atbash(string userInput) {
 	string output = "";
