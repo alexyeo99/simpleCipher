@@ -1,5 +1,5 @@
 # Simple Cipher Library
-A C++ library that provides functions for encoding and decoding Atbash, Caesar and Vigenere Ciphers.
+A C++ library that provides functions for encoding and decoding Atbash, Caesar and Vigenere Ciphers. These are primitive ciphers that can be done on paper.
 # Usage
 The only required files are simplecipher.h and simplecipher.cpp. The rest like demo.cpp are for convenience.
 
