@@ -16,3 +16,5 @@ The only required files are simplecipher.h and simplecipher.cpp. The rest like d
 
 *string ciphertext refers to either encoded or decoded text to be processed by the function.
 
+## Future development ideas
+1. Create unit tests

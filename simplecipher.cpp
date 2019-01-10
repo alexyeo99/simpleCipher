@@ -124,7 +124,7 @@ string vigenere::encode(string userInput, string rawUserKey){
   if(!squareInit){
     generateSquare();
   }
-  //Now, process the key to filter invalid stuff.
+  //Now, process the key to filter invalid stuff
   string userKey = "";
   for(int i = 0; i < rawUserKey.length(); i++){
       char tempChar = tolower(rawUserKey[i]);
@@ -185,8 +185,7 @@ string vigenere::encode(string userInput, string rawUserKey){
 string caesar(string userInput, int userShift) {
   string output = "";
   for(int i = 0; i < userInput.length(); i++){
-      char temp = 'a';
-      temp = userInput[i];
+      char temp = userInput[i];
       bool makeUpper = false;
       if (isupper(temp)){
 	  makeUpper = true;
@@ -197,19 +196,18 @@ string caesar(string userInput, int userShift) {
       if (temp >=96 && temp <=122){
 	  temp = temp + userShift;
 	  //do corrections
-	  //TODO: Make this into a while
-	  while(temp < 96 || temp > 122){
+	  while(temp < 96 || temp > 122){ //TODO: use modulo
 	    if(temp < 96){ //handle undeflows
 	      //get the difference
 	      int diff = 97 - temp;
 	      temp = 123 - diff;
-	      }
-	      //handle overflows
-	      if (temp > 122){
-		  int diff = temp - 122;
-		  temp = 96 + diff;
-	      }			
-	   }
+	    }
+	    //handle overflows
+	    if (temp > 122){
+	      int diff = temp - 122;
+	      temp = 96 + diff;
+	    }			
+	  }
 	}
 	
       //commit change
@@ -233,12 +231,11 @@ string atbash(string userInput) {
       if(isupper(temp)){
 	  makeUpper = true;
       }
-      //take out case snsitivity
+      //take out case sensitivity
       temp = tolower(temp);
       if (temp >=96 || temp <=122){ //process supported chars only
 	  int k = 122 - temp;
-	  k = 97 + k;
-			
+	  k = 97 + k;		
 	  temp = k;
       }
       //process uppercase
